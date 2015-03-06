@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:edit, :update, :destroy]
-
+  @@name = "veni"
+  $name = "veni"
   # GET /carts
   # GET /carts.json
   def index

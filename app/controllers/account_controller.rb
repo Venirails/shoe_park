@@ -6,7 +6,7 @@ class AccountController < ApplicationController
 			@user = User.new(params[:user].permit(:name,:email,:hashed_password,:password))
 			
 			if @user.save
-				        UserNotifier.signup_confirmation(@user).deliver
+				UserNotifier.signup_confirmation(@user).deliver
 
 				redirect_to :action=>"login"
 				
@@ -24,7 +24,7 @@ class AccountController < ApplicationController
 			redirect_to :action=>"welcome"
 			
 		else  
-			flash[:notice] = "Invalid Username / Password"
+			flash[:notice] = "Invalid Username / Password.please try again"
 		        render :action=>"login"
 			
 		end

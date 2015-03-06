@@ -1,4 +1,5 @@
 class GalleryController < ApplicationController
+	$name = "veni" 
 	include ActiveMerchant::Billing
 	layout :false
   def index
@@ -37,7 +38,7 @@ class GalleryController < ApplicationController
 			render :text =>'Credit card not valid: ' + credit_card.validate.to_s and return
 			end
 
-		UserNotifier.purchase_complete(session[:user],current_cart).deliver
+		#UserNotifier.purchase_complete(session[:user],current_cart).deliver
 		flash[:notice]="Thank You for using Amaron Beats. The oreder details are sent to your mail"
 		session[:cart_id]=nil
 		redirect_to :action=>:purchase_complete

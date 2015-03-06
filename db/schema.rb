@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140522210121) do
     t.integer  "size"
     t.string   "color"
     t.string   "brand"
-    t.decimal  "price",              precision: 10, scale: 0
+    t.decimal  "price"
     t.text     "description"
     t.text     "features"
     t.string   "image_file_name"
